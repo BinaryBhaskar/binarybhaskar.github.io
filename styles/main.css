@@ -60,9 +60,7 @@ a {
 .container {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 40px 24px 60px 24px;
-  position: relative;
-  z-index: 1;
+  padding: 24px 10px;
 }
 
 /* === HERO SECTION === */
@@ -113,6 +111,27 @@ a {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: opacity 0.5s cubic-bezier(.77,0,.175,1);
+}
+
+.profile-img-main {
+  z-index: 1;
+  opacity: 1;
+}
+
+.profile-img-hover {
+  z-index: 2;
+  opacity: 0;
+}
+
+.profile-image:hover .profile-img-hover {
+  opacity: 1;
+}
+.profile-image:hover .profile-img-main {
+  opacity: 0;
 }
 
 .profile-placeholder {
@@ -231,7 +250,8 @@ a {
 
 /* === SECTIONS === */
 section {
-  margin-bottom: 80px;
+  margin-bottom: 36px;
+/* removed extra closing brace */
 }
 
 .section-title {
@@ -271,12 +291,12 @@ section {
 
 /* === CARDS === */
 .project-card, .skill-card, .info-card {
-  background: rgba(255,255,255,0.04);
-  border-radius: 20px;
-  padding: 32px;
-  border: 2px solid rgba(255,255,255,0.08);
-  transition: all 0.4s cubic-bezier(.77,0,.175,1);
-  cursor: pointer;
+  background: #181818;
+  border-radius: 16px;
+  padding: 18px 14px;
+  margin-bottom: 16px;
+  transition: box-shadow 0.2s, transform 0.2s;
+/* removed extra closing brace */
 }
 
 .project-card:hover, .skill-card:hover {

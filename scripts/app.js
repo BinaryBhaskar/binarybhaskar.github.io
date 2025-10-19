@@ -275,6 +275,33 @@ document.addEventListener('DOMContentLoaded', () => {
     let hoverSize = 32;
     let targetSize = baseSize;
     let currentSize = baseSize;
+    
+            // Helper function to check if element is text or inline
+            function isTextElement(el) {
+                const inlineTags = ['A', 'SPAN', 'B', 'I', 'EM', 'STRONG', 'SMALL', 'LABEL', 'MARK', 'U', 'S', 'SUB', 'SUP'];
+                return inlineTags.includes(el.tagName);
+            }
+    
+            // Add hover listeners to all elements except text/inline
+            document.querySelectorAll('body *').forEach(el => {
+                if (!isTextElement(el)) {
+                    el.addEventListener('mouseenter', () => {
+                        targetSize = hoverSize;
+                    });
+                    el.addEventListener('mouseleave', () => {
+                        targetSize = baseSize;
+                    });
+                }
+            });
+            // Also keep button hover logic for accessibility
+            document.querySelectorAll('button').forEach(btn => {
+                btn.addEventListener('mouseenter', () => {
+                    targetSize = hoverSize;
+                });
+                btn.addEventListener('mouseleave', () => {
+                    targetSize = baseSize;
+                });
+            });
 
     function animateCursor() {
     // Velocity calculation
@@ -316,7 +343,18 @@ document.addEventListener('DOMContentLoaded', () => {
     animateCursor();
 
     // Cursor largens on interactive elements
-    const interactiveSelectors = 'a, button, .project-card';
+    const interactiveSelectors = [
+        'a',
+        'button',
+        '.project-card',
+        '.skill-card',
+        '.achievement-card',
+        '.certification-card',
+        '.interests-list > *',
+        '.languages-list > *',
+        '.volunteer-card',
+        '.info-card'
+    ].join(', ');
     document.querySelectorAll(interactiveSelectors).forEach(el => {
         el.addEventListener('mouseenter', () => {
             isHovering = true;
