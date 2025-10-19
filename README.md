@@ -1,40 +1,58 @@
-# Personal Portfolio Website
+# Black and White Portfolio Website
 
-This repository contains the source code and files for my personal portfolio website. The website is built using HTML, CSS, and JavaScript.
+This project is a minimal and expressive black and white portfolio website designed to showcase creative work. The website features smooth animations and a clean layout, focusing on user experience and visual appeal.
 
-## Description
+## Project Structure
 
-The personal portfolio website showcases my skills, projects, and experiences as a web developer. It serves as an online platform to highlight my work and provide information about my background and expertise.
+```
+bw-portfolio
+├── src
+│   ├── index.html          # Main HTML document
+│   ├── styles
+│   │   └── main.css       # Styles for the portfolio
+│   ├── scripts
+│   │   └── app.js         # Main JavaScript file for interactivity
+│   ├── components
+│   │   └── animation.js    # Animation functions
+│   └── assets
+│       └── fonts
+│           └── README.md   # Font information
+├── package.json            # npm configuration file
+└── README.md               # Project documentation
+```
 
 ## Features
 
-- Home: Introduces myself and provides a brief overview of my skills and interests.
-- About: Details my professional background, education, and relevant experience.
-- Projects: Showcases the projects I have worked on, including descriptions, screenshots, and links to live demos or repositories.
-- Skills: Lists the programming languages, frameworks, and tools I am proficient in.
-- Contact: Offers various ways to get in touch with me, such as through email, social media, or a contact form.
+- Minimal black and white design
+- Smooth animations for a dynamic user experience
+- Responsive layout for various devices
+- Easy to customize and extend
 
-## Technologies Used
+## Setup Instructions
 
-- HTML: Markup language used for structuring the website.
-- CSS: Stylesheet language used for designing and formatting the website.
-- JavaScript: Programming language used for adding interactivity and dynamic features.
+1. Clone the repository:
+   ```
+   git clone <repository-url>
+   ```
 
-## Getting Started
+2. Navigate to the project directory:
+   ```
+   cd bw-portfolio
+   ```
 
-To view the website locally or make modifications, follow these steps:
+3. Install dependencies:
+   ```
+   npm install
+   ```
 
-1. Clone the repository: `git clone [repository URL]`
-2. Open the project folder in your preferred code editor.
-3. Open the `index.html` file in a web browser to view the website.
+4. Open `src/index.html` in your browser to view the portfolio.
 
-## Contributing
+## Usage
 
-I appreciate any suggestions, feedback, or contributions to enhance this personal portfolio website. If you would like to contribute, please follow the guidelines in the `CONTRIBUTING.md` file.
+- Modify the content in `src/index.html` to showcase your work.
+- Update styles in `src/styles/main.css` to customize the appearance.
+- Add interactivity through `src/scripts/app.js` and `src/components/animation.js`.
 
-## Contact
+## License
 
-If you have any questions or inquiries, please feel free to reach out to me through the contact information provided in the website or by using the contact form.
-
-Thank you for visiting my personal portfolio repository! I hope you find it informative and visually appealing.
-![Portfolio](https://github.com/Venkateeshh/Portfolio-Website/assets/117290841/d05942e3-6970-47eb-9757-482f11bb6044)
+This project is licensed under the MIT License. See the LICENSE file for details.
