@@ -28,11 +28,30 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     }
+        let cursorTimeout;
     window.addEventListener('scroll', fadeInOnScroll);
     window.addEventListener('resize', fadeInOnScroll);
     setTimeout(fadeInOnScroll, 100);
 
     // === Animated Scientific/Computational References ===
+    function showCursor() {
+        cursor.style.opacity = '1';
+    }
+    function hideCursor() {
+        cursor.style.opacity = '0';
+    }
+        function resetCursorTimeout() {
+            showCursor();
+            clearTimeout(cursorTimeout);
+            cursorTimeout = setTimeout(hideCursor, 3000);
+        }
+        window.addEventListener('mousemove', (e) => {
+            mouseX = e.clientX;
+            mouseY = e.clientY;
+            resetCursorTimeout();
+        });
+        cursorTimeout = setTimeout(hideCursor, 2000);
+
     const references = [
         "print('Hello World!')",
         "e = mc²",
@@ -48,7 +67,22 @@ document.addEventListener('DOMContentLoaded', () => {
         "AI/ML",
         "π ≈ 3.14159",
         "x = (-b ± √(b²-4ac)) / 2a",
-        "System.out.println('Hi!')"
+        "System.out.println('Hi!')",
+        "Bhaskar Patel",
+        "#include <stdio.h>",
+        "console.log('Hello!')",
+        "<div>Hello</div>",
+        "SELECT * FROM users;",
+        "git commit -m 'Initial commit'",
+        "void main() { }",
+        "echo 'Hello World!'",
+        "func main() { }",
+        "let x = 10;",
+        "while (true) { }",
+        "try { ... } catch (e) { }",
+        "data class User(val name: String)",
+        "chmod +x script.sh",
+        "the moon loves the stars"
     ];
 
     function createReference(shape) {
@@ -133,7 +167,7 @@ document.addEventListener('DOMContentLoaded', () => {
     function createShape() {
         const types = ['circle', 'rect', 'hex'];
         const type = types[Math.floor(Math.random() * types.length)];
-        const size = 40 + Math.random() * 80;
+        const size = 30 + Math.random() * 120;
         const x = Math.random() < 0.5 ? -size : canvas.width + size;
         const y = Math.random() * canvas.height;
         const speed = 0.5 + Math.random() * 1.5;
